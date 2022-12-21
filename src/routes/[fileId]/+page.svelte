@@ -12,10 +12,12 @@
         <meta property="og:type" content="website" />
         <meta property="og:description" content="" />
         <meta name="description" content="" />
-        <meta property="og:site_name" content="DDriedSponge.net | Images" />
+        <meta property="og:site_name" content="DriedSponge.net | Images" />
         <meta property="og:title" content={data.name} />
         <meta property="og:url" content={data.pageUrl} />
         <meta property="og:image:type" content="{data.type}"/>
+        <meta property="og:image" content="{data.url}"/>
+
     {:else }
         <title>File Not Found</title>
     {/if}
