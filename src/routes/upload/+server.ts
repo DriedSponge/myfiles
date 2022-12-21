@@ -30,7 +30,7 @@ export const POST = (async ({ request }) => {
 
         const appFile = await storage.createFile("files",file.name,InputFile.fromPath(directory,file.name))
         await fs.promises.unlink(directory);
-        return json({success:true,url:`htts://i.driedsponge.net/${file.name}`,raw_url: `${PUBLIC_PROJECT_ENDPOINT}/storage/buckets/${appFile.bucketId}/files/${appFile.$id}/view?project=${PUBLIC_PROJECT_ID}`})
+        return json({success:true,url:`https://i.driedsponge.net/${file.name}`,raw_url: `${PUBLIC_PROJECT_ENDPOINT}/storage/buckets/${appFile.bucketId}/files/${appFile.$id}/view?project=${PUBLIC_PROJECT_ID}`})
     }catch (e){
         await fs.promises.unlink(directory);
         console.log(e)
