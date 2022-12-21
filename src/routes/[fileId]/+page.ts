@@ -2,11 +2,12 @@ import type { PageLoad } from './$types';
 import { Client, Storage } from "appwrite";
 import AppwriteManager from "$lib/AppwriteManager";
 
-export const load = (async ({ params }) => {
+export const load = (async ({ url, params }) => {
     const storage = new Storage(AppwriteManager.client);
-    return await storage.getFile("files",params.fileId).then((res)=>{
-        return {found: true, name: storage.getFileView("files",params.fileId)}
-    }).catch((error)=>{
+    try{
+        const file = await storage.getFile("files",params.fileId);
+        return {found: true, url: storage.getFileView("files",params.fileId),name:file.name, pageUrl:url,type:file.mimeType}
+    }catch (e){
         return {found: false}
-    })
+    }
 }) satisfies PageLoad;
