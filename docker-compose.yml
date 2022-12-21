@@ -1,0 +1,13 @@
+version: '3.9'
+networks:
+  myfiles:
+
+services:
+  myfiles:
+    image: ghcr.io/driedsponge/myfiles:latest
+    ports:
+      - 8004:3000
+    networks:
+      - myfiles
+    restart: unless-stopped
+    container_name: myfiles
