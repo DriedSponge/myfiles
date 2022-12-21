@@ -11,7 +11,5 @@ services:
       - myfiles
     env_file:
       - .env
-    volumes:
-      - "/.env:/.env"
     restart: unless-stopped
     container_name: myfiles
