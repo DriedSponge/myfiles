@@ -2,11 +2,11 @@ FROM node:19-alpine
 
 COPY .  .
 
-RUN yarn install
-RUN yarn run build
+VOLUME ["/.env"]
 
-WORKDIR /build
+RUN yarn install
 
 EXPOSE 3000
+RUN chmod +x start.sh
 
-ENTRYPOINT ["node","index.js"]
+ENTRYPOINT ["/start.sh"]

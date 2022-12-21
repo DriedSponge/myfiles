@@ -4,12 +4,14 @@ networks:
 
 services:
   myfiles:
-    image: ghcr.io/driedsponge/myfiles:latest
+    image: myfiles
     ports:
       - 8004:3000
     networks:
       - myfiles
     env_file:
       - .env
+    volumes:
+      - "/.env:/.env"
     restart: unless-stopped
     container_name: myfiles
