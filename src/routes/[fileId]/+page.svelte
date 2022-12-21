@@ -5,7 +5,7 @@
 </script>
 <svelte:head>
     {#if data.found}
-        <title>{`DriedSponge's Files - ${data.name}`}</title>
+        <title>{`DriedSponge.net | Files - ${data.name}`}</title>
         <meta name="twitter:title" content={data.name} />
         <meta name="twitter:card" content="summary_large_image"/>
         <meta property="twitter:image" content="{data.url}"/>
@@ -13,7 +13,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:description" content="" />
         <meta name="description" content="" />
-        <meta property="og:site_name" content="DriedSponge.net | Images" />
+        <meta property="og:site_name" content="DriedSponge.net | Files" />
         <meta property="og:title" content={data.name} />
         <meta property="og:url" content={data.pageUrl} />
         <meta property="og:image:type" content="{data.type}"/>
