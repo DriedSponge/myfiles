@@ -1,6 +1,7 @@
 import type {RequestHandler} from "@sveltejs/kit";
 import {redirect} from "@sveltejs/kit";
+import {PUBLIC_PROJECT_ENDPOINT, PUBLIC_PROJECT_ID} from "$env/static/public";
 
 export const GET = (async ({request,params}) =>{
-    return  Response.redirect(`https://appwrite.driedsponge.net/v1/storage/buckets/files/files/${params.fileId}/view?project=63843ea0359d982fc2ff`,301)
+    return  Response.redirect(`${PUBLIC_PROJECT_ENDPOINT}/storage/buckets/files/files/${params.fileId}/view?project=${PUBLIC_PROJECT_ID}`,301)
 }) satisfies RequestHandler
