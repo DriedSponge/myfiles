@@ -9,5 +9,7 @@ services:
       - 8004:3000
     networks:
       - myfiles
+    env_file:
+      - .env
     restart: unless-stopped
     container_name: myfiles
