@@ -20,7 +20,6 @@ export const POST = (async ({ request }) => {
     if(!file){
         throw error(400,"No file attached")
     }
-    await fs.promises.mkdir("temp");
     const directory = `temp/${file.name}`
     const storage = new sdk.Storage(client);
     await fs.promises.writeFile(directory, Buffer.from(await file.arrayBuffer()))
