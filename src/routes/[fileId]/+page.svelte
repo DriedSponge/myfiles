@@ -4,6 +4,7 @@
     import { toast } from '@zerodevx/svelte-toast'
     import { Client, Storage } from "appwrite";
     import AppwriteManager from "$lib/AppwriteManager";
+    import dayjs from "dayjs";
     export let data: PageData;
     let storage = new Storage(AppwriteManager.client);
     let copy = (async (text:String)=>{
@@ -23,16 +24,7 @@
     }
 
     function date(date){
-        let formatted = new Date(date);
-        return new Intl.DateTimeFormat('en-us', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            timeZoneName: 'short'
-        }).format(formatted)
+        return dayjs(new Date(date)).format("M/D/YYYY h:mm A")
     }
 </script>
 <svelte:head>
