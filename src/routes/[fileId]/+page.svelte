@@ -10,6 +10,30 @@
         await  navigator.clipboard.writeText(text)
         toast.push("Copied!")
     })
+    function readBytes(bytes) {
+        const units = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+        let unitIndex = 0;
+
+        while (bytes >= 1024) {
+            bytes /= 1024;
+            unitIndex++;
+        }
+
+        return `${bytes.toFixed(2)} ${units[unitIndex]}`;
+    }
+
+    function date(date){
+        let formatted = new Date(date);
+        return new Intl.DateTimeFormat('en-us', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            timeZoneName: 'short'
+        }).format(formatted)
+    }
 </script>
 <svelte:head>
     {#if data.found}
@@ -33,8 +57,10 @@
 </svelte:head>
 <div class="flex flex-col h-screen justify-center items-center space-y-4">
     {#if data.found }
-
-        <h1 class="text-center text-white sm:text-5xl text-3xl font-bold">{data.name}</h1>
+        <div>
+            <h1 class="text-center text-white sm:text-4xl text-3xl font-bold">{data.name}</h1>
+            <p class="text-center text-gray-400 text-md">{readBytes(data.size)} &bull; {data.type} &bull; Created {date(data.created_at)}</p>
+        </div>
         <figure class="flex items-center justify-center container max-h-screen overflow-y-auto">
             <img src="{data.url}" class="object-contain shadow-xl sm:shadow-2xl rounded-lg">
         </figure>
