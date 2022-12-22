@@ -25,6 +25,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-node": "^1.0.0",
+		"@zerodevx/svelte-toast": "1.0.0-rc.1",
 		"appwrite": "^10.1.0",
 		"node-appwrite": "^8.1.0"
 	}
