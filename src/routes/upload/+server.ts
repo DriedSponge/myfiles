@@ -6,7 +6,7 @@ import {Readable} from "stream";
 import * as process from "process";
 import {PUBLIC_PROJECT_ENDPOINT, PUBLIC_PROJECT_ID} from "$env/static/public";
 
-export const POST = (async ({ request }) => {
+export const POST = (async ({ request, url }) => {
     const client = new sdk.Client();
     if(!request.headers.get("x-appwrite-key")){
         throw error(401,"No api key supplied")
@@ -30,7 +30,7 @@ export const POST = (async ({ request }) => {
 
         const appFile = await storage.createFile("files",file.name,InputFile.fromPath(directory,file.name))
         await fs.promises.unlink(directory);
-        return json({success:true,url:`https://i.driedsponge.net/${file.name}`,raw_url: `${PUBLIC_PROJECT_ENDPOINT}/storage/buckets/${appFile.bucketId}/files/${appFile.$id}/view?project=${PUBLIC_PROJECT_ID}`})
+        return json({success:true,url:`${url.origin}/${file.name}`,raw_url: `${PUBLIC_PROJECT_ENDPOINT}/storage/buckets/${appFile.bucketId}/files/${appFile.$id}/view?project=${PUBLIC_PROJECT_ID}`})
     }catch (e){
         await fs.promises.unlink(directory);
         console.log(e)
