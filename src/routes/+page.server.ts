@@ -8,6 +8,8 @@ export  const load = (async ()=>{
     client.setEndpoint(PUBLIC_PROJECT_ENDPOINT)
     client.setProject(PUBLIC_PROJECT_ID)
     client.setKey(APPWRITE_API_KEY)
+    // @ts-ignore
+    client.addHeader('Accept-Encoding', '*');
     const storage = new sdk.Storage(client);
     let total = await storage.listFiles("files")
     return {total:total.total}

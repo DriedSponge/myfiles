@@ -8,7 +8,7 @@ specifiers:
   appwrite: ^10.2.0
   autoprefixer: ^10.4.13
   dayjs: ^1.11.7
-  node-appwrite: ^8.1.0
+  node-appwrite: ^8.2.0
   postcss: ^8.4.20
   svelte: ^3.54.0
   svelte-check: ^2.10.3
@@ -23,7 +23,7 @@ dependencies:
   '@zerodevx/svelte-toast': 1.0.0-rc.1
   appwrite: 10.2.0
   dayjs: 1.11.7
-  node-appwrite: 8.1.0
+  node-appwrite: 8.2.0
 
 devDependencies:
   '@sveltejs/adapter-auto': 1.0.0_@sveltejs+kit@1.0.1
@@ -474,11 +474,12 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /axios/0.27.2:
-    resolution: {integrity: sha512-t+yRIyySRTp/wua5xEr+z1q60QmLq8ABsS5O9Me1AsE5dfKqgnCFzwiCZZ/cGNd1lq4/7akDWMxdhVlucjmnOQ==}
+  /axios/1.2.1:
+    resolution: {integrity: sha512-I88cFiGu9ryt/tfVEi4kX2SITsvDddTajXTOFmt2uK1ZVA8LytjtdeyefdQWEf5PU8w+4SSJDoYnggflB5tW4A==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
+      proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
     dev: false
@@ -996,10 +997,10 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  /node-appwrite/8.1.0:
-    resolution: {integrity: sha512-PWT1rsxI54Vq6y+GDrbNNCO2eQiSkK0Rc/SOLNAFJvLsNmo4FF47ls7+RcEc9fDYYtXPwGt4Wa0vB7udwv92iQ==}
+  /node-appwrite/8.2.0:
+    resolution: {integrity: sha512-SFSTxHewwtbjkiF93OJEqOZC1x3mnvz1G/rKg9BNz4CG5PI9xP/pKqsKHYDdwUOfOB2Su90jI7fKglIPFd+o8A==}
     dependencies:
-      axios: 0.27.2
+      axios: 1.2.1
       form-data: 4.0.0
     transitivePeerDependencies:
       - debug
@@ -1136,6 +1137,10 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+
+  /proxy-from-env/1.1.0:
+    resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
+    dev: false
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}

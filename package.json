@@ -28,6 +28,6 @@
 		"@zerodevx/svelte-toast": "1.0.0-rc.1",
 		"appwrite": "^10.2.0",
 		"dayjs": "^1.11.7",
-		"node-appwrite": "^8.1.0"
+		"node-appwrite": "^8.2.0"
 	}
 }
