@@ -5,7 +5,7 @@ specifiers:
   '@sveltejs/adapter-node': ^1.0.0
   '@sveltejs/kit': ^1.0.0
   '@zerodevx/svelte-toast': 1.0.0-rc.1
-  appwrite: ^10.1.0
+  appwrite: ^10.2.0
   autoprefixer: ^10.4.13
   dayjs: ^1.11.7
   node-appwrite: ^8.1.0
@@ -21,7 +21,7 @@ specifiers:
 dependencies:
   '@sveltejs/adapter-node': 1.0.0_@sveltejs+kit@1.0.0
   '@zerodevx/svelte-toast': 1.0.0-rc.1
-  appwrite: 10.1.0
+  appwrite: 10.2.0
   dayjs: 1.11.7
   node-appwrite: 8.1.0
 
@@ -441,8 +441,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /appwrite/10.1.0:
-    resolution: {integrity: sha512-kHtPqKf0X+mxmkS47G3F5vVY5wKMVRv7ZTpTvd9H3m1KBIm3aDAEBCEUt6bGQdE8XKgqLFzhqWFdQWkxX6I0xA==}
+  /appwrite/10.2.0:
+    resolution: {integrity: sha512-1cQoFWj9XlbfFP2heq5phRGjXtygpnJZY3MsAN8IWJuPvCKcVxq7Ntkz7IZm48OhLe74ByMvHCSLcOZ2BD1VsQ==}
     dependencies:
       cross-fetch: 3.1.5
       isomorphic-form-data: 2.0.0
