@@ -6,12 +6,15 @@
 
 <svelte:head>
   <title>DriedSponge's File Server | Welcome</title>
+  <meta property="og:title" content="DriedSponge's File Server | Welcome" />
+  <meta property="og:description" content="{data.total} Total Files and Counting..." />
+  <meta name="description" content="{data.total} Total Files and Counting..." />
 </svelte:head>
-<div class="flex flex-col items-center justify-center h-screen space-y-4">
+<div class="flex flex-col items-center justify-center min-h-screen space-y-4 pb-3">
   <div class="container max-w-lg space-y-4">
     <div class="text-center space-y-3">
-      <h1 class="text-white text-6xl">Welcome</h1>
-      <h2 class="text-gray-400 text-2xl"><strong>{data.total}</strong> Total Files and Counting...</h2>
+      <h1 class="text-white text-3xl md:text-6xl">Welcome</h1>
+      <h2 class="text-gray-400 text-xl md:text-2xl"><strong>{data.total}</strong> Total Files and Counting...</h2>
     </div>
     <div class="text-box">
       <h3>What's This?</h3>
@@ -41,13 +44,13 @@
 </div>
 <style lang="postcss">
   p{
-    @apply text-center text-gray-100 text-lg;
+    @apply text-center text-gray-100 text-base md:text-lg;
   }
   h3{
-    @apply text-center text-white font-bold text-xl tracking-wide;
+    @apply text-center text-white font-bold text-lg md:text-xl tracking-wide;
   }
   .text-box{
-    @apply bg-backroundsecondary p-4 rounded-xl space-y-1;
+    @apply bg-backroundsecondary p-4 rounded-xl space-y-1 mx-3;
   }
   a{
     @apply text-clickblue hover:text-blue-300;
