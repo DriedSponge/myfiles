@@ -22,7 +22,7 @@ client
         loggedIn.set(true);
         username.set(res.name);
       })
-      .catch((res)=>{
+      .catch(()=>{
         console.debug("Not logged in")
         loggedIn.set(false)
       })

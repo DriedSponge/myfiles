@@ -1,8 +1,7 @@
 <script lang="ts">
     import type { PageData } from './$types';
-    import { page } from "$app/stores"
     import { toast } from '@zerodevx/svelte-toast'
-    import { Client, Storage } from "appwrite";
+    import { Storage } from "appwrite";
     import AppwriteManager from "$lib/AppwriteManager";
     import dayjs from "dayjs";
     export let data: PageData;

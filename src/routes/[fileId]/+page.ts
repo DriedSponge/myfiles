@@ -1,5 +1,5 @@
 import type { PageLoad } from './$types';
-import { Client, Storage } from "appwrite";
+import { Storage } from "appwrite";
 import AppwriteManager from "$lib/AppwriteManager";
 
 export const load = (async ({ url, params }) => {
@@ -10,7 +10,7 @@ export const load = (async ({ url, params }) => {
             found: true,
             url: storage.getFileView("files",params.fileId),name:file.name, pageUrl:url,
             type:file.mimeType,
-            download: await storage.getFileDownload("files",file.name).href,
+            download: storage.getFileDownload("files",file.name).href,
             size: file.sizeOriginal,
             created_at: file.$createdAt
         }

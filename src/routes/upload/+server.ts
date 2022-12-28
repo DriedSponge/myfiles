@@ -1,9 +1,7 @@
 import {error, json} from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import * as fs from "fs";
-import sdk, {AppwriteException, InputFile} from 'node-appwrite';
-import {Readable} from "stream";
-import * as process from "process";
+import sdk, {InputFile} from 'node-appwrite';
 import {PUBLIC_PROJECT_ENDPOINT, PUBLIC_PROJECT_ID} from "$env/static/public";
 
 export const POST = (async ({ request, url }) => {
