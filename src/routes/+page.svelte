@@ -10,7 +10,7 @@
   <meta property="og:description" content="{data.total} Total Files and Counting..." />
   <meta name="description" content="{data.total} Total Files and Counting..." />
 </svelte:head>
-<div class="flex flex-col items-center justify-center min-h-screen space-y-4 pb-3">
+<div class="flex flex-col items-center justify-center min-h-screen space-y-4 pb-3 mx-3">
   <div class="container max-w-lg space-y-4">
     <div class="text-center space-y-3">
       <h1 class="text-white text-3xl md:text-6xl">Welcome</h1>
@@ -50,7 +50,7 @@
     @apply text-center text-white font-bold text-lg md:text-xl tracking-wide;
   }
   .text-box{
-    @apply bg-backroundsecondary p-4 rounded-xl space-y-1 mx-3;
+    @apply bg-backroundsecondary p-4 rounded-xl space-y-1;
   }
   a{
     @apply text-clickblue hover:text-blue-300;
