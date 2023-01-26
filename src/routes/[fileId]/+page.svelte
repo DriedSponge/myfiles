@@ -28,10 +28,12 @@
 </script>
 <svelte:head>
     {#if data.found}
+        <meta name="robots" content="noindex">
         <title>{`DriedSponge.net | Files - ${data.name}`}</title>
         <meta name="twitter:title" content={data.name} />
         <meta name="twitter:card" content="summary_large_image"/>
         <meta property="twitter:image" content="{data.url}"/>
+        <meta property="twitter:image:src" content="{data.url}"/>
         <meta name="twitter:description" content="" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="" />
