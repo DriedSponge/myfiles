@@ -3,6 +3,8 @@
     import { toast } from '@zerodevx/svelte-toast'
     import { Storage } from "appwrite";
     import AppwriteManager from "$lib/AppwriteManager";
+    import { browser } from "$app/environment";
+
     import dayjs from "dayjs";
     export let data: PageData;
     let storage = new Storage(AppwriteManager.client);
@@ -24,6 +26,14 @@
 
     function date(date){
         return dayjs(new Date(date)).format("M/D/YYYY h:mm A")
+    }
+    function share(title, url){
+        navigator.share({
+            title: title,
+            url: url
+        }).then(() => {
+            console.log("Shared");
+        })
     }
 </script>
 <svelte:head>
@@ -59,8 +69,14 @@
         </figure>
         <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-3 text-center text-md sm:text-lg items-center justify-center">
             <a class="button" href="{data.download}">Download</a>
+            {#if browser}
+            {#if navigator.share}
+                <button class="button" on:click={(()=>{share("File "+data.name,data.pageUrl)})}>Share</button>
+                {:else}
             <button class="button" on:click={copy(data.pageUrl)}>Copy Link</button>
             <button class="button" on:click={copy(data.url)}>Copy Image Link</button>
+            {/if}
+            {/if}
         </div>
     {:else }
         <div>
